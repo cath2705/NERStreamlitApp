@@ -1,7 +1,7 @@
 import streamlit as st
 import spacy
 from spacy.pipeline import EntityRuler
-from utils import load_patterns, highlight_entities
+import os 
 
 # Set up the page
 st.set_page_config(page_title="Custom NER App", layout="wide")
@@ -15,9 +15,7 @@ patterns = load_patterns("patterns/example_patterns.json")
 
 # Add EntityRuler with custom patterns
 ruler = nlp.add_pipe("entity_ruler", before="ner")
-import os
-path = os.path.join(os.path.dirname(__file__), "patterns", "example_patterns.json")
-ruler.from_disk(path)
+ruler.add_patterns(patterns) 
 
 # Sidebar for user input
 st.sidebar.header("Text Input Options")
