@@ -14,9 +14,8 @@ nlp = spacy.load("en_core_web_sm")
 patterns = load_patterns("patterns/example_patterns.json")
 
 # Add EntityRuler with custom patterns
-ruler = EntityRuler(nlp)
-ruler.add_patterns(patterns)
-nlp.add_pipe(ruler, before="ner")
+ruler = nlp.add_pipe("entity_ruler", before="ner")
+ruler.from_disk("patterns/example_patterns.json")
 
 # Sidebar for user input
 st.sidebar.header("Text Input Options")
