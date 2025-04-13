@@ -15,7 +15,9 @@ patterns = load_patterns("patterns/example_patterns.json")
 
 # Add EntityRuler with custom patterns
 ruler = nlp.add_pipe("entity_ruler", before="ner")
-ruler.from_disk("patterns/example_patterns.json")
+import os
+path = os.path.join(os.path.dirname(__file__), "patterns", "example_patterns.json")
+ruler.from_disk(path)
 
 # Sidebar for user input
 st.sidebar.header("Text Input Options")
