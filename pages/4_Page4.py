@@ -4,12 +4,38 @@ from spacy import displacy
 
 # --- Main App Function ---
 def main():
-    st.title("Custom NER Application with spaCy")
-    st.write(
-        "This application allows you to explore Named Entity Recognition (NER) "
-        "by adding custom rules using spaCy’s EntityRuler. You can enter your own text "
-        "or use the provided sample text, define custom entities, and visualize the detected entities."
-    )
+    st.title("🎉 Welcome to the Custom NER Explorer! 🎉")
+    st.write("""
+        This application allows you to explore Named Entity Recognition (NER). 
+        You can analyze text to see which words and phrases are automatically tagged as entities—
+        and even add your own custom entity rules to tailor the analysis.
+    """)
+
+    # new text 
+    st.markdown("## How to Use the App")
+
+    # Expandable section for explanation
+    with st.expander("The App Explained"):
+        st.markdown("""
+        
+        This app is designed to give you hands-on experience with Named Entity Recognition (NER) using spaCy, 
+        with an added twist: you can inject your own custom rules to detect entities that might not otherwise 
+        be captured by a general-purpose model.
+
+        ### 1. Enter Your Text
+        In the main section, enter or paste text in the textbox to analyze.
+
+        ### 2. Add Custom Entity Rules (Optional)
+        Use the sidebar to add rules. Enter a label and the exact token to detect.
+
+        ### 3. Process Your Text
+        Click the "Process Text" button to analyze and visualize results.
+
+        ### 4. Review the Results
+        The app will highlight entities in the text and label them by type.
+        """)
+
+    st.markdown("---")
 
     # --- Sidebar: Custom Rules Input ---
     st.sidebar.header("Add Custom Entity Rule")
@@ -19,7 +45,6 @@ def main():
     if st.sidebar.button("Add Entity Rule"):
         if custom_label and custom_token:
             pattern = {"label": custom_label, "pattern": [{"LOWER": custom_token.lower()}]}
-            # Initialize session state list if not present
             if "patterns" not in st.session_state:
                 st.session_state.patterns = []
             st.session_state.patterns.append(pattern)
@@ -40,22 +65,16 @@ def main():
 
     # --- Processing Button ---
     if st.button("Process Text"):
-        # Load the spaCy model
         nlp = spacy.load("en_core_web_sm")
-        # Add the EntityRuler pipeline component before the standard NER
         ruler = nlp.add_pipe("entity_ruler", before="ner", config={"overwrite_ents": True})
-        
-        # Add any custom patterns from session state (if they exist)
+
         if "patterns" in st.session_state and st.session_state.patterns:
             ruler.add_patterns(st.session_state.patterns)
         
-        # Process the text
         doc = nlp(user_text)
-        
-        # Render the visualization using spaCy's displacy
         html = displacy.render(doc, style="ent", jupyter=False)
         st.write("### Recognized Entities")
         st.markdown(html, unsafe_allow_html=True)
-    
+
 if __name__ == "__main__":
     main()
