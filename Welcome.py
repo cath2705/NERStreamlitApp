@@ -21,7 +21,7 @@ st.image(
     use_container_width=True
 )
 
-# Follow with clean markdown block
+# Follow with markdown block
 st.markdown(
     """
     Named Entity Recognition is a key **Natural Language Processing (NLP)** technique that identifies and labels entities in text, like:
@@ -46,7 +46,7 @@ st.markdown(
 col1, col2 = st.columns(2)
 
 with col1:
-    st.image("https://f5b623aa.delivery.rocketcdn.me/wp-content/uploads/2022/02/Blog_Common-Examples-of-NER_500x350.jpg", use_container_width=True, caption="Example of NER in Action")
+    st.image("https://cdn.botpenguin.com/assets/website/few_nerd_1_ae19b90a78.webp", use_container_width=True, caption="Example of NER in Action")
 
 with col2:
     st.markdown(
