@@ -12,7 +12,7 @@ def main():
     """)
 
     # new text 
-    st.markdown("## How to Use the App")
+    st.markdown("### How to Use the App")
 
     # Expandable section for explanation
     with st.expander("The App Explained"):
@@ -89,3 +89,19 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+st.markdown("---")
+
+
+
+
+
+
+
+
+
+
+st.markdown("---")
+
+
+st.markdown("---")
