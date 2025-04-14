@@ -10,3 +10,18 @@ def load_lottie_url(url):
 lottie_ner = load_lottie_url("https://lottie.host/2210cc4b-6b14-4a54-ad8a-7107b0da4c34/TMLSc5Jv1t.json")
 
 st_lottie(lottie_ner, height=300, key="ner")
+
+import streamlit as st
+
+st.markdown("---")
+st.markdown("### 🧪 Quick Quiz: Which of these is an entity?")
+
+answer = st.radio(
+    "Select the correct option:",
+    ["the", "January", "running", "fast"]
+)
+
+if answer == "January":
+    st.success("🎉 Correct! 'January' is a date, which is a named entity.")
+else:
+    st.error("❌ Not quite. 'January' would be the correct entity here.")

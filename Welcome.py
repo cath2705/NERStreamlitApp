@@ -2,14 +2,20 @@ import streamlit as st
 
 st.set_page_config(page_title="NER Streamlit App", layout="wide")
 
-st.markdown("# 👋 Welcome to My Custom NER App")
-st.markdown("NER refers to Named Entity Recognition. Read more to understand what exactly this means! ")
-st.markdown("Use the sidebar to navigate through the different tools and learn about Named Entity Recognition.")
+st.markdown("# 👋 Welcome to My NER App")
+st.markdown("""
+Named Entity Recognition (NER) is a key task in **Natural Language Processing (NLP)** that identifies and classifies important information—like names of people, places, organizations, dates, and more—from text.  
+            
+This website is designed to help you understand what NER is, how it works, and why it matters. Whether you are new to the concept or looking to explore its real-world applications, you'll find interactive tools and resources here to guide you.  
 
+Use the sidebar to explore different sections of the app. Try out hands-on tools, learn about NER in context, and see how machines extract meaning from language.  
 
-st.markdown("### What even is Named Entity Recognition (NER)?")
+**So… what even is NER? Let's find out.**
+""")
 
-# ✅ Image outside of st.markdown, and using use_container_width
+st.markdown("# What is Named Entity Recognition (NER)?")
+
+# Image outside of st.markdown, and using use_container_width
 st.image(
     "https://www.labellerr.com/blog/content/images/2024/01/ner-1.webp",
     use_container_width=True
@@ -28,11 +34,19 @@ st.markdown(
     """
 )
 
+st.markdown(
+    """
+   # What Does this Actually Look Like?
+    """
+)
+
+
+
 # Create columns for image + text side-by-side
 col1, col2 = st.columns(2)
 
 with col1:
-    st.image("https://f5b623aa.delivery.rocketcdn.me/wp-content/uploads/2022/02/Blog_Common-Examples-of-NER_500x350.jpg", use_column_width=True, caption="Example of NER in Action")
+    st.image("https://f5b623aa.delivery.rocketcdn.me/wp-content/uploads/2022/02/Blog_Common-Examples-of-NER_500x350.jpg", use_container_width=True, caption="Example of NER in Action")
 
 with col2:
     st.markdown(
@@ -49,7 +63,7 @@ with col2:
     )
 
 # Expandable section
-with st.expander("📚 Why does this even matter?"):
+with st.expander("# 📚 Why does this even matter?"):
     
     # Add spacing below image
     st.markdown("")
