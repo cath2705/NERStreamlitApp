@@ -21,7 +21,7 @@ st.image(
     use_container_width=True
 )
 
-# Follow with markdown block
+# Follow with markdown block to explain more of how it works
 st.markdown(
     """
     Named Entity Recognition is a key **Natural Language Processing (NLP)** technique that identifies and labels entities in text, like:
@@ -34,12 +34,12 @@ st.markdown(
     """
 )
 
+# new text 
 st.markdown(
     """
    # What Does this Actually Look Like?
     """
 )
-
 
 
 # Create columns for image + text side-by-side
@@ -62,7 +62,7 @@ with col2:
         """
     )
 
-
+# new text 
 st.markdown("## Why Does this Matter?")
 
 # Expandable section
@@ -79,8 +79,18 @@ with st.expander("# Click to Find Out"):
     
     st.markdown(
         """
-        NER is used in tons of real-world applications:
+        NER is used in tons of real-world applications!
+
+        Entity Recognition isn’t just an academic concept—it’s a powerful tool that quietly drives innovation in the technologies we use every day. Behind the scenes, it's helping teams and developers extract meaning from language at scale, enabling smarter, faster, and more personalized systems across countless industries.
         
+        **For example:**
+        
+        On a **hiring platform**, entity detection helps scan thousands of resumes, automatically identifying names, job titles, companies, degrees, and salaries—cutting down hours of manual work into seconds. 
+        
+        In **healthcare**, it’s used to process and sort patient data by recognizing medications, diagnoses, or symptoms within medical records, enabling faster and more accurate analysis.
+        Even voice bots and virtual assistants rely on entity detection to understand what users are saying. When you say, “Call Dr. Smith at Stanford,” the system doesn’t just hear words—it understands that “Dr. Smith” is a person and “Stanford” is an organization, then uses that information to take meaningful action.
+
+        Other real-world uese include...
         - 📰 News Aggregators  
         - 🔎 Search Engines  
         - 🧠 Knowledge Graphs  
