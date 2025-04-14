@@ -62,8 +62,11 @@ with col2:
         """
     )
 
+
+st.markdown("## Why Does this Matter?")
+
 # Expandable section
-with st.expander("# 📚 Why does this even matter?"):
+with st.expander("# Click to Find Out"):
     
     # Add spacing below image
     st.markdown("")
