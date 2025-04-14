@@ -17,17 +17,20 @@ def main():
     # Expandable section for explanation
     with st.expander("The App Explained"):
         st.markdown("""
-                    This app is designed to give you hands-on experience with Named Entity Recognition (NER) using spaCy, 
+                    This app is designed to give you hands-on experience with Named Entity Recognition (NER) using spaCy—
                      with an added twist: you can inject your own custom rules to detect entities that might not otherwise 
                     be captured by a general-purpose model.
                     
                      ### 1. Enter Your Text
-                    ## In the main section, enter or paste text in the textbox to analyze.
+                    In the main section, enter or paste text in the textbox to analyze.
                      
                      ### 2. Add Custom Entity Rules (Optional)
                     On the left-hand sidebar, you can specify your own rules for recognizing entities:
+                    
                     **Entity Label:** Enter a custom label that describes the type of entity (for example, PRODUCT, BRAND, or LOCATION).
+                    
                     **Pattern Text:** Input the exact word (or token) you want to detect. The app will match occurrences of this word (case-insensitive) in your text.
+                    
                     **Adding a Rule:** Click the "Add Entity Rule" button to save your rule. Your current custom rules will be listed below, so you can review them before processing.
                     
                     ### 3. Process Your Text
@@ -36,7 +39,9 @@ def main():
                     
                      ### 4. Review the Results
                      After processing, the app highlights detected entities directly within the text.
+                    
                     **Entity Labels:** Each highlighted section shows the entity type. This lets you see which parts of the text the model recognized (or you defined) as entities.
+                    
                     **Dynamic Updates:** Feel free to adjust your text or add new rules and process the text again to see how the analysis changes.
                     
                     """)
