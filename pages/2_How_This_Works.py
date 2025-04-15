@@ -131,7 +131,7 @@ st.image(
     use_container_width=True
 )
 
-
+st.markdown("---")
 st.markdown("""
             👉 Now, head to the sidebar to use a Custom Named Entity Recognizer!
            

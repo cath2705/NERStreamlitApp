@@ -87,7 +87,7 @@ st.markdown("""
             **How does casing affect detection?**
             → Try: “facebook” vs “Facebook”; “january” vs “January.”
             """)
-
+st.markdown("---")
 st.markdown("""
             👉 Head to the sidebar to learn about how Named Entity Recognizers work!
            

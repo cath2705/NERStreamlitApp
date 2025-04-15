@@ -41,7 +41,6 @@ st.markdown(
     """
 )
 
-
 # Create columns for image + text side-by-side
 col1, col2 = st.columns(2)
 
