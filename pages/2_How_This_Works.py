@@ -130,3 +130,9 @@ st.image(
     "https://media-cldnry.s-nbcnews.com/image/upload/t_fit-760w,f_auto,q_auto:best/MSNBC/Components/Photo/_new/091015-pcw-appbeat-hmed.jpg",
     use_container_width=True
 )
+
+
+st.markdown("""
+            👉 Now, head to the sidebar to use a Custom Named Entity Recognizer!
+           
+            """)
