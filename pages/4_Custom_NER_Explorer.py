@@ -12,10 +12,10 @@ def main():
     """)
 
     # new text 
-    st.markdown("### How to Use the App")
+    st.markdown("### Need Help Understanding How to Use the App?")
 
     # Expandable section for explanation
-    with st.expander("The App Explained"):
+    with st.expander("Click to Have the App Explained 👉"):
         st.markdown("""
                     This app is designed to give you hands-on experience with Named Entity Recognition (NER) using spaCy—
                      with an added twist: you can inject your own custom rules to detect entities that might not otherwise 
@@ -90,18 +90,98 @@ def main():
 if __name__ == "__main__":
     main()
 
+# new text 
+st.markdown("### What do my Results Mean? ")
+
+# Expandable section
+with st.expander("# Click to Find Out 👉"):
+    
+    # Add spacing below image
+    st.markdown("")
+
+    st.image(
+    "/Users/catherineparis/Documents/GitHub/Paris-Python-Portfolio/NERStreamlitApp/SC2.png", caption=" Here is a list of what SpaCy Named Entity Recognition labels mean ", use_container_width=True
+    )
+
+
 st.markdown("---")
 
+# New text giving an example
+st.write("""
+         ## Need Inspiration for Your Custom Rules? 
+         ### Here’s an Example Use Case
+    """)
 
+# to imput images
+import streamlit as st
+from PIL import Image
 
+image_path = "/Users/catherineparis/Documents/GitHub/Paris-Python-Portfolio/NERStreamlitApp/Screenshot1.png"
+image = Image.open(image_path)
+st.image(image, caption="First, I imputed the sentence into the Custom NER Explorer app with no added entity labels or pattern text, to see what that output would look like. As you can see, the app (incorrectly) recognized Tesla as NORP (NORP is SpaCy’s classification for Nationalities or religious or political groups) ", use_container_width=True)
 
-
-
-
-
-
+# adding text
+st.write("""
+    This kind of misclassification is actually pretty common with pre-trained spaCy models. Pre-trained spaCy models are trained on broad, general datasets and can struggle with domain-specific language, leading to misclassifications when encountering ambiguous or unfamiliar terms. They rely on statistical patterns, which might not capture nuanced meanings outside their training data.
+    
+    That’s why you want to add custom rules!
+         
+    """)
 
 st.markdown("---")
 
+# digression into seperate example
+st.write("""
+  ### ✋ Quick digression!
+  Observe the how the accuracy improves as custom rules are added
+    """)
+
+# including images (using columns so they can be next to each other)
+colx, coly = st.columns(2)
+
+with colx:
+    st.image(
+    "https://dataknowsall.com/hs-fs/hubfs/image-png-1.png?width=1600&height=920&name=image-png-1.png", caption="Before adding custom rules ", use_container_width=True
+    )
+
+with coly:
+    st.image(
+    "https://dataknowsall.com/hs-fs/hubfs/image-png-2.png?width=1600&height=1000&name=image-png-2.png", caption="After adding custom rules ", use_container_width=True
+    )
+ 
+st.write("""
+         Notice how much more accurate the second version is. 
+         """)
 
 st.markdown("---")
+
+st.write("""
+         ### Back to Our Example Use Case!
+
+         Since our orginal Named Entity Recognition was not accurate for our sentence **I enjoyed a crisp apple from the orchard while walking past the Tesla showroom downtown.** Let's add some custom Entity Labels and Pattern Text using the sidebar tools
+        """)
+
+# including images (using columns so they can be next to each other)
+col1, col2 = st.columns(2)
+
+with col1:
+    image_path = "/Users/catherineparis/Documents/GitHub/Paris-Python-Portfolio/NERStreamlitApp/Screenshot2.png"
+    image = Image.open(image_path)
+    st.image(image, caption="This rule will search for the word **apple** in the text. Every time it finds **apple** (ignoring case differences), it will tag it as a fruit. ", use_container_width=True)
+
+with col2:
+    image_path = "/Users/catherineparis/Documents/GitHub/Paris-Python-Portfolio/NERStreamlitApp/Screenshot3.png"
+    image = Image.open(image_path)
+    st.image(image, caption="This rule will look for the word **tesla** in the text. Every match will be classified under the CAR label, signifying that it represents a car brand ", use_container_width=True)
+
+st.write("""
+         ### Now Let's Re-Run the App!
+        """)
+
+image_path = "/Users/catherineparis/Documents/GitHub/Paris-Python-Portfolio/NERStreamlitApp/Screenshot4.png"
+image = Image.open(image_path)
+st.image(image, caption=" Now the app correctly identifies **apple** as a fruit and **tesla** as a car ", use_container_width=True)
+
+st.write("""
+        ## Now Try It Yourself!👆😃
+        """)
