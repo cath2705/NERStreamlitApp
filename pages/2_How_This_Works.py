@@ -1,7 +1,7 @@
 import streamlit as st
 
 #Set up page 
-st.title("🔍 How This Works")
+st.title("🔍 How Named Entity Recognition Works")
 st.write("But **HOW** is a machine actually able to identify and understand entities in text?")
 
 import streamlit as st
